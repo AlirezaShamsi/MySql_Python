@@ -1,4 +1,3 @@
-from os import kill
 import mysql.connector
 #Connect as alireza
 con = mysql.connector.MySQLConnection(user= 'alireza', database= 'test')
@@ -26,25 +25,28 @@ mysql.connector.MySQLConnection.cmd_init_db("AlirezaBase")
 #NOTE: DONT USE IT DIRECTLY
 mysql.connector.MySQLConnection.cmd_ping()
 
-#Show informatin in INFORMATION_SCHEMA in database
-mysql.connector.MySQLConnection.cmd_process_info()
-
-
 #first command kill 123 thread
 #second command delete thread 123
 mysql.connector.MySQLConnection.cmd_process_kill(123)
 mysql.connector.MySQLConnection.cmd_query('KILL 123')
 
+#Send multiple command to database
+statement = 'SELECT 1; INSERT INTO t1 VALUES(); SELECT 2;'
+for result in mysql.connector.MySQLConnection.cmd_query_iter(statement):
+    if 'columns' in result:
+        columns = result['columns']
+        rows = con.get_row()
+    else:
+        #Do nothing
 
 #Close conection
+#in my sql 8 it is doesent work
 mysql.connector.MySQLConnection.cmd.quit()
 
+
+
 #Show informatin in INFORMATION_SCHEMA in database
-mysql.connector.MySQLConnection.cmd_process_info()
-
-
-
-
+con.cmd_process_info()
 
 
 
