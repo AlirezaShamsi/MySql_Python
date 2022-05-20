@@ -8,6 +8,6 @@ con.reconnect()
 
 #add a record to employee and then commited it to database
 #NOTE: commit must be enter every time you change a query from databse using poython this is not automaticaly
-cursor.execute("INSERT INTO emoployees (first name) VALUES (%s)", ('alireza'))
+mysql.connector.MySQLConnection.cursor.execute("INSERT INTO emoployees (first name) VALUES (%s)", ('alireza'))
 con.commit()
 
