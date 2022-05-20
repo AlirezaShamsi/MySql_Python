@@ -20,7 +20,7 @@ mysql.connector.MySQLConnection.cursor(buffered=None, raw=None, cursor_class=Non
 mysql.connector.MySQLConnection.cmd_debug()
 
 #2.use defined database in there "AlirezaBase" initial database
-mysql.connector.MySQLConnection.cmd_init_db(AlirezaBase)
+mysql.connector.MySQLConnection.cmd_init_db("AlirezaBase")
 
 #Checks connection to dbmsServer
 #NOTE: DONT USE IT DIRECTLY
@@ -32,5 +32,21 @@ mysql.connector.MySQLConnection.cmd_process_info()
 
 #first command kill 123 thread
 #second command delete thread 123
-con.cmd_process_kill(123)
+mysql.connector.MySQLConnection.cmd_process_kill(123)
+mysql.connector.MySQLConnection.cmd_query('KILL 123')
+
+
+#Close conection
+mysql.connector.MySQLConnection.cmd.quit()
+
+#Show informatin in INFORMATION_SCHEMA in database
+mysql.connector.MySQLConnection.cmd_process_info()
+
+
+
+
+
+
+
+
 
