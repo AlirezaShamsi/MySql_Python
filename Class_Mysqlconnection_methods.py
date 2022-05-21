@@ -43,10 +43,93 @@ for result in mysql.connector.MySQLConnection.cmd_query_iter(statement):
 #in my sql 8 it is doesent work
 mysql.connector.MySQLConnection.cmd.quit()
 
+#turrning off Database
+mysql.connector.MySQLConnection.cmd_shutdown()
 
+#returns a dictinary include information about MySQL server
+mysql.connector.MySQLConnection.cmd_statistics()
+
+#Send QUIT command to DB and close socket without any Exception
+mysql.connector.MySQLConnection.disconnect()
+
+#This method retrieves all or remaining rows of a query result set, returning a tuple containing the rows as sequences and the EOF packet information.
+mysql.connector.MySQLConnection.get_rows(count=None)
+
+#This method retrieves remaining row
+mysql.connector.MySQLConnection.get_row()
+
+#Version of MYSQL
+mysql.connector.MySQLConnection.get_server_version()
+
+#checking connection between host and Mysql
+mysql.connector.MySQLConnection.is_connected()
+
+#if client flag is activated return true else false
+mysql.connector.MySQLConnection.isset_client_flag()
+
+#checking connection with to args for ping
+mysql.connector.MySQLConnection.ping(attempts=1, delay=0)
+
+#Reconnect
+mysql.connector.MySQLConnection.reconnect(attempts=1, delay=0)
+
+#rollback
+mysql.connector.MySQLConnection.rollback()
+
+
+#Define chars and collation
+mysql.connector.MySQLConnection.set_charset_collation(charset=None, collation=None)
+#example
+con = mysql.connector.MySQLConnection(user= 'alireza')
+mysql.connector.MySQLConnection.set_charset_collation('latin1', 'latin1_general_ci')
+
+#config client flag
+mysql.connector.MySQLConnection.set_client_flags(flags)
+
+#star a transaction
+mysql.connector.MySQLConnection.start_transaction()
+
+#set autocommit false or true (default is false)
+mysql.connector.MySQLConnection.autocommit = True
+
+#name of chars
+mysql.connector.MySQLConnection.charset_name
+
+#name of collation
+mysql.connector.MySQLConnection.collation_name
+
+#return connection id as int
+mysql.connector.MySQLConnection.connection_id
+
+#run USE command for choice database
+mysql.connector.MySQLConnection.database='Publishers'
+
+
+#Turn warning on or off
+mysql.connector.MySQLConnection.get_warnings
+
+#shown a transactin is disable or enable
+mysql.connector.MySQLConnection.in_transaction
+
+
+#when a warning accourd rais exception
+mysql.connector.MySQLConnection.raise_on_warnings
+
+#name of host or ip (string)
+mysql.connector.MySQLConnection.server_host
+
+#number of port
+mysql.connector.MySQLConnection.server_port
+
+#return sql modes
+mysql.connector.MySQLConnection.sql_mode
+
+#time zone configuration
+mysql.connector.MySQLConnection.time_zone
 
 #Show informatin in INFORMATION_SCHEMA in database
 con.cmd_process_info()
+
 
 
 
