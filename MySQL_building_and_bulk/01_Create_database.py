@@ -9,6 +9,6 @@ myCursor = conn.cursor()
 if myCursor:
     myCursor.execute("CREATE DATABASE myDatabase")
     print("myDatabase is create")
-    
+
 else:
     print('Error!')
