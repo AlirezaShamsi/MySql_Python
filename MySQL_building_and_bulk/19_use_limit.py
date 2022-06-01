@@ -1,4 +1,3 @@
-from ast import Num
 import mysql.connector
 
 conn = mysql.connector.connect(
@@ -11,6 +10,7 @@ conn = mysql.connector.connect(
 myCursor = conn.cursor()
 
 num = input("Enter number of rows that you want : ")
+#use limit for rows
 sql = 'select title, price from books limit ' + num
 myCursor.execute(sql)
 myResult =  myCursor.fetchall()
