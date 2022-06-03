@@ -19,7 +19,7 @@ def insertBLOB(emp_id, name, photo, biodataFile):
         )
 
         cursor = conn.cursor()
-        sql_insert_blob_query = """inset into employee (id, name, photo, biodata) values (%s, %s, %s,%s)"""
+        sql_insert_blob_query = """insert into employee (id, name, photo, biodata) values (%s, %s, %s,%s)"""
         empPicture = convertToBinaryData(photo)
         file = convertToBinaryData(biodataFile)
         
